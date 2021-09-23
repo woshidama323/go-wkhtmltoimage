@@ -8,8 +8,6 @@ package wkhtmltoimage
 import "C"
 import (
 	"errors"
-	"fmt"
-	"syscall"
 )
 
 // Init initializes the library, allocating all necessary resources.
@@ -28,6 +26,5 @@ func Version() string {
 
 // Destroy releases all the resources used by the library.
 func Destroy() {
-	fmt.Println("current tid is:", syscall.Gettid())
 	C.wkhtmltoimage_deinit()
 }
